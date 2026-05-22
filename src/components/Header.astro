@@ -6,9 +6,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header class="bg-white border-b border-gray-200">
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-24 items-center">
+      <!-- Logo and Site Name -->
       <div class="flex items-center">
         <a href={lang === 'it' ? '/' : `/${lang}/`} class="flex items-center">
           <img src="/logo.png" alt="Pax et Sapientia Logo" class="h-16 w-16 object-contain" />
@@ -18,6 +19,7 @@ const t = useTranslations(lang);
         </a>
       </div>
       
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-8">
         <a href={lang === 'it' ? '/' : `/${lang}/`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
           {t('nav.home')}
@@ -36,8 +38,10 @@ const t = useTranslations(lang);
         </a>
       </nav>
 
-      <div class="flex items-center">
-        <div class="flex space-x-2">
+      <!-- Language Switcher and Mobile Menu Button -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Switcher (Desktop and Tablet) -->
+        <div class="hidden sm:flex space-x-2">
           {Object.entries(languages).map(([code, label]) => (
             <a
               href={code === 'it' ? '/' : `/${code}/`}
@@ -47,7 +51,76 @@ const t = useTranslations(lang);
             </a>
           ))}
         </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button 
+          id="mobile-menu-button"
+          type="button" 
+          class="md:hidden p-2 rounded-md text-[#1A2B4C] hover:bg-gray-100 focus:outline-none"
+          aria-label="Menu"
+        >
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200">
+    <div class="px-4 pt-2 pb-6 space-y-1">
+      <a href={lang === 'it' ? '/' : `/${lang}/`} class="block px-3 py-4 text-base font-medium text-[#1A2B4C] hover:bg-gray-50 rounded-md">
+        {t('nav.home')}
+      </a>
+      <a href={lang === 'it' ? '/chi-siamo' : `/${lang}/about`} class="block px-3 py-4 text-base font-medium text-[#1A2B4C] hover:bg-gray-50 rounded-md">
+        {t('nav.about')}
+      </a>
+      <a href={lang === 'it' ? '/sostienici' : `/${lang}/support`} class="block px-3 py-4 text-base font-medium text-[#1A2B4C] hover:bg-gray-50 rounded-md">
+        {t('nav.support')}
+      </a>
+      <a href={lang === 'it' ? '/trasparenza' : `/${lang}/transparency`} class="block px-3 py-4 text-base font-medium text-[#1A2B4C] hover:bg-gray-50 rounded-md">
+        {t('nav.transparency')}
+      </a>
+      <a href={lang === 'it' ? '/contatti' : `/${lang}/contact`} class="block px-3 py-4 text-base font-medium text-[#1A2B4C] hover:bg-gray-50 rounded-md">
+        {t('nav.contact')}
+      </a>
+      
+      <!-- Mobile Language Switcher -->
+      <div class="pt-4 border-t border-gray-100 flex space-x-4 px-3">
+        {Object.entries(languages).map(([code, label]) => (
+          <a
+            href={code === 'it' ? '/' : `/${code}/`}
+            class={`px-4 py-2 text-sm rounded ${lang === code ? 'bg-[#1A2B4C] text-white' : 'text-[#1A2B4C] border border-gray-200'}`}
+          >
+            {label}
+          </a>
+        ))}
       </div>
     </div>
   </div>
 </header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+    mobileMenuButton.addEventListener('click', () => {
+      const isExpanded = mobileMenu.classList.contains('hidden');
+      
+      if (isExpanded) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  }
+</script>
