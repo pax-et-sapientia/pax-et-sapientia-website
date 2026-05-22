@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+  <div class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-[#1A2B4C] mb-8">Contact Us</h1>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold text-[#1A2B4C] mb-6">Contact Information</h2>
+          <p class="text-gray-700 mb-8 leading-relaxed">
+            We are at your disposal for information, collaboration proposals, or clarifications on our activities.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">📍</span>
+              <div>
+                <h3 class="font-bold text-[#1A2B4C]">Registered Office</h3>
+                <p class="text-sm text-gray-600">Piazza dei Cavalieri di Malta, 5 - 00153 Rome, Italy</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <span class="text-2xl mr-4">📧</span>
+              <div>
+                <h3 class="font-bold text-[#1A2B4C]">PEC Email</h3>
+                <p class="text-sm text-gray-600">fondazionepaxetsapientia@legalmail.it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-2 rounded-2xl shadow-sm border border-gray-100 overflow-hidden min-h-[600px]">
+          <!-- Google Form Placeholder -->
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSf6-vC0pX3W9WvY-Xxxxxxxxxxxxx/viewform?embedded=true" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+          >Loading...</iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

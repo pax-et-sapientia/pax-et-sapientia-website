@@ -1,0 +1,39 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="bg-[#1A2B4C] text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-white/10 pb-8">
+      <div>
+        <h3 class="text-lg font-serif font-bold mb-4">{t('footer.denomination')}</h3>
+        <p class="text-gray-300 text-sm">
+          {t('footer.address')}
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-serif font-bold mb-4">Link</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href={lang === 'it' ? '/trasparenza' : `/${lang}/transparency`} class="hover:text-[#C5A059] transition-colors">{t('nav.transparency')}</a></li>
+          <li><a href={lang === 'it' ? '/privacy' : `/${lang}/privacy`} class="hover:text-[#C5A059] transition-colors">Privacy Policy</a></li>
+          <li><a href={lang === 'it' ? '/cookie' : `/${lang}/cookie`} class="hover:text-[#C5A059] transition-colors">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-serif font-bold mb-4">Contatti</h3>
+        <p class="text-gray-300 text-sm">
+          PEC: fondazionepaxetsapientia@legalmail.it<br />
+          Codice Fiscale: 96512340582 (Example)<br />
+          P.IVA: (Example)
+        </p>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+      <p>&copy; {new Date().getFullYear()} {t('footer.denomination')}. All rights reserved.</p>
+      <p class="mt-4 md:mt-0">Design for Foundation Pax et Sapientia</p>
+    </div>
+  </div>
+</footer>

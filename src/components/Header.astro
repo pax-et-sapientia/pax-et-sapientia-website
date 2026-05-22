@@ -1,0 +1,53 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header class="bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-24 items-center">
+      <div class="flex items-center">
+        <a href={lang === 'it' ? '/' : `/${lang}/`} class="flex items-center">
+          <img src="/logo.svg" alt="Pax et Sapientia Logo" class="h-16 w-16" />
+          <span class="ml-3 text-xl font-serif font-bold text-[#1A2B4C] hidden sm:block">
+            PAX ET SAPIENTIA
+          </span>
+        </a>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href={lang === 'it' ? '/' : `/${lang}/`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
+          {t('nav.home')}
+        </a>
+        <a href={lang === 'it' ? '/chi-siamo' : `/${lang}/about`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
+          {t('nav.about')}
+        </a>
+        <a href={lang === 'it' ? '/sostienici' : `/${lang}/support`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
+          {t('nav.support')}
+        </a>
+        <a href={lang === 'it' ? '/trasparenza' : `/${lang}/transparency`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
+          {t('nav.transparency')}
+        </a>
+        <a href={lang === 'it' ? '/contatti' : `/${lang}/contact`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
+          {t('nav.contact')}
+        </a>
+      </nav>
+
+      <div class="flex items-center">
+        <div class="flex space-x-2">
+          {Object.entries(languages).map(([code, label]) => (
+            <a
+              href={code === 'it' ? '/' : `/${code}/`}
+              class={`px-2 py-1 text-sm rounded ${lang === code ? 'bg-[#1A2B4C] text-white' : 'text-[#1A2B4C] hover:bg-gray-100'}`}
+            >
+              {code.toUpperCase()}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
