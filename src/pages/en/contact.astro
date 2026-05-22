@@ -7,22 +7,22 @@ import Layout from '../../layouts/Layout.astro';
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="text-4xl font-bold text-[#1A2B4C] mb-8">Contact Us</h1>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-12">
           <h2 class="text-2xl font-bold text-[#1A2B4C] mb-6">Contact Information</h2>
           <p class="text-gray-700 mb-8 leading-relaxed">
             We are at your disposal for information, collaboration proposals, or clarifications on our activities.
           </p>
           
-          <div class="space-y-4">
-            <div class="flex items-start">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
               <span class="text-2xl mr-4">📍</span>
               <div>
                 <h3 class="font-bold text-[#1A2B4C]">Registered Office</h3>
                 <p class="text-sm text-gray-600">Piazza dei Cavalieri di Malta, 5 - 00153 Rome, Italy</p>
               </div>
             </div>
-            <div class="flex items-start">
+            <div class="flex items-start p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
               <span class="text-2xl mr-4">📧</span>
               <div>
                 <h3 class="font-bold text-[#1A2B4C]">PEC Email</h3>
@@ -32,11 +32,11 @@ import Layout from '../../layouts/Layout.astro';
           </div>
         </div>
 
-        <div class="bg-white p-2 rounded-2xl shadow-sm border border-gray-100 overflow-hidden min-h-[700px]">
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <iframe 
             src="https://docs.google.com/forms/d/e/1FAIpQLSeUqRwG9AIemHEeSRyYop7wGhwI9j428-IYOHa-YI503hd4Xw/viewform?embedded=true" 
             width="100%" 
-            height="700" 
+            height="850" 
             frameborder="0" 
             marginheight="0" 
             marginwidth="0"
