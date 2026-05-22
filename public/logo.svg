@@ -1,41 +1,60 @@
 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Closed Book (Sapientia) -->
-  <g transform="translate(60, 45)">
-    <!-- Book Spine/Binding -->
-    <path d="M0 5 L0 95 Q5 102 12 95 L12 5 Q5 -2 0 5" fill="#1A2B4C" stroke="#C5A059" stroke-width="2"/>
-    
-    <!-- Front Cover - Darker Blue with Light Outline -->
-    <path d="M12 5 L85 15 L85 105 L12 95 Z" fill="#121F36" stroke="#C5A059" stroke-width="2"/>
-    
-    <!-- Page Edges (showing depth) -->
-    <path d="M12 95 L85 105 L95 100 L22 90 Z" fill="#FFFFFF" stroke="#C5A059" stroke-width="1"/>
-    <path d="M85 15 L95 10 L95 100 L85 105 Z" fill="#FFFFFF" stroke="#C5A059" stroke-width="1"/>
-    
-    <!-- Gold corner detail on cover -->
-    <path d="M70 18 L85 20 L85 35 Z" fill="#C5A059"/>
+  <!-- Coin Base - Textured Silver/Slate -->
+  <circle cx="100" cy="100" r="95" fill="#f0f4f8" stroke="#708090" stroke-width="1"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#1A2B4C" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Subtle Coin Texture (Hammered effect) -->
+  <circle cx="100" cy="100" r="95" fill="url(#coinGradient)" opacity="0.6"/>
+  
+  <defs>
+    <radialGradient id="coinGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#708090" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular Olive Wreath (Athenian Style) -->
+  <g fill="none" stroke="#1A2B4C" stroke-width="1.5" stroke-linecap="round">
+    <!-- Left Branch -->
+    <path d="M100 180 Q60 180 40 140 Q20 100 40 60 Q60 20 100 20" opacity="0.8"/>
+    <!-- Right Branch -->
+    <path d="M100 180 Q140 180 160 140 Q180 100 160 60 Q140 20 100 20" opacity="0.8"/>
   </g>
 
-  <!-- Upward-pointing Olive Branch (Pax) crossing the front -->
-  <g transform="translate(45, 155)">
-    <!-- Main Stem - Sweeping upwards -->
-    <path d="M0 0 Q20 -5 50 -40 Q80 -75 120 -90" fill="none" stroke="#C5A059" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Wreath Leaves (Lanceolate and rhythmic) -->
+  <g fill="#1A2B4C">
+    <!-- Left side leaves -->
+    <path d="M42 160 Q30 165 35 150 Q40 145 42 160" />
+    <path d="M28 135 Q15 130 25 120 Q35 115 28 135" />
+    <path d="M25 100 Q10 95 20 85 Q30 80 25 100" />
+    <path d="M35 70 Q25 60 40 50 Q55 45 35 70" />
+    <path d="M60 35 Q55 20 75 25 Q85 30 60 35" />
     
-    <!-- Upward leaves - Lanceolate and distinct -->
-    <!-- Base leaves -->
-    <path d="M25 -12 Q10 -35 35 -30 Q45 -15 25 -12" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="1.2"/>
-    <path d="M40 -25 Q60 -5 75 -25 Q55 -45 40 -25" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="1.2"/>
-    
-    <!-- Mid-level leaves -->
-    <path d="M65 -50 Q55 -75 80 -65 Q85 -45 65 -50" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="1.2"/>
-    <path d="M85 -60 Q110 -40 120 -60 Q105 -80 85 -60" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="1.2"/>
-    
-    <!-- Tip leaves -->
-    <path d="M105 -85 Q100 -110 125 -105 Q135 -85 105 -85" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="1.2"/>
-    <path d="M115 -88 Q145 -85 140 -105 Q125 -115 115 -88" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="1.2"/>
+    <!-- Right side leaves -->
+    <path d="M158 160 Q170 165 165 150 Q160 145 158 160" />
+    <path d="M172 135 Q185 130 175 120 Q165 115 172 135" />
+    <path d="M175 100 Q190 95 180 85 Q170 80 175 100" />
+    <path d="M165 70 Q175 60 160 50 Q145 45 165 70" />
+    <path d="M140 35 Q145 20 125 25 Q115 30 140 35" />
+  </g>
 
-    <!-- Prominent Olives -->
-    <circle cx="35" cy="-25" r="5.5" fill="#C5A059" stroke="#1A2B4C" stroke-width="0.8"/>
-    <circle cx="80" cy="-60" r="5.5" fill="#f0f4f8" stroke="#1A2B4C" stroke-width="0.8"/>
-    <circle cx="115" cy="-85" r="5.5" fill="#C5A059" stroke="#1A2B4C" stroke-width="0.8"/>
+  <!-- Open Book (Numismatic/Chiseled Style) -->
+  <g transform="translate(100, 100)">
+    <!-- Book Background/Shadow -->
+    <path d="M-55 35 Q-25 45 0 35 Q25 45 55 35 L55 -35 Q25 -25 0 -35 Q-25 -25 -55 -35 Z" fill="#1A2B4C" opacity="0.1"/>
+    
+    <!-- Pages -->
+    <path d="M-50 30 Q-25 40 0 30 L0 -30 Q-25 -20 -50 -30 Z" fill="#FFFFFF" stroke="#1A2B4C" stroke-width="2"/>
+    <path d="M50 30 Q25 40 0 30 L0 -30 Q25 -20 50 -30 Z" fill="#FFFFFF" stroke="#1A2B4C" stroke-width="2"/>
+    
+    <!-- Center Crease -->
+    <line x1="0" y1="-30" x2="0" y2="30" stroke="#1A2B4C" stroke-width="1"/>
+
+    <!-- Text: PAX ET | SAPIENTIA (Serif / Chiseled) -->
+    <text font-family="Serif" font-weight="bold" fill="#1A2B4C" text-anchor="middle">
+      <tspan x="-25" y="-5" font-size="14">PAX</tspan>
+      <tspan x="-25" y="12" font-size="14">ET</tspan>
+      <tspan x="25" y="5" font-size="11">SAPIENTIA</tspan>
+    </text>
   </g>
 </svg>
