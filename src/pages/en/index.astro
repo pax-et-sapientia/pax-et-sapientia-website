@@ -14,17 +14,26 @@ import Layout from '../../layouts/Layout.astro';
           The Benedictine Foundation Pax et Sapientia - ETS is committed to promoting culture, 
           protecting the environment, and training new generations, inspired by the values of participation and solidarity.
         </p>
-        <div class="flex space-x-4">
-          <a href="/en/about" class="bg-[#C5A059] hover:bg-[#b38f4d] text-[#1A2B4C] font-bold py-3 px-8 rounded-lg transition-colors">
+        <div class="flex space-x-4 mb-12 lg:mb-0">
+          <a href="/en/about" class="bg-[#C5A059] hover:bg-[#b38f4d] text-[#1A2B4C] font-bold py-3 px-8 rounded-lg transition-colors text-center">
             Discover more
           </a>
-          <a href="/en/support" class="border-2 border-white hover:bg-white hover:text-[#1A2B4C] text-white font-bold py-3 px-8 rounded-lg transition-colors">
+          <a href="/en/support" class="border-2 border-white hover:bg-white hover:text-[#1A2B4C] text-white font-bold py-3 px-8 rounded-lg transition-colors text-center">
             Support Us
           </a>
         </div>
       </div>
+
+      <!-- Mobile Decorative Logo (Stacked below text) -->
+      <div class="lg:hidden flex justify-center mt-12 opacity-20">
+        <picture>
+          <source srcset="/logo.webp" type="image/webp" />
+          <img src="/logo.png" alt="" class="w-64 h-64 object-contain" width="256" height="256" loading="lazy" />
+        </picture>
+      </div>
     </div>
-    <!-- Decorative background elements -->
+    
+    <!-- Desktop Decorative Logo (Absolute background) -->
     <div class="absolute top-1/2 -right-12 w-1/2 h-full -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
       <picture>
         <source srcset="/logo.webp" type="image/webp" />
