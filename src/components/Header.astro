@@ -29,8 +29,8 @@ const t = useTranslations(lang);
         </a>
       </div>
       
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex space-x-8">
+      <!-- Desktop Navigation (Visible from Large Screens / 1024px+) -->
+      <nav class="hidden lg:flex space-x-8">
         <a href={lang === 'it' ? '/' : `/${lang}/`} class="text-[#1A2B4C] hover:text-[#C5A059] font-medium transition-colors">
           {t('nav.home')}
         </a>
@@ -62,11 +62,11 @@ const t = useTranslations(lang);
           ))}
         </div>
 
-        <!-- Mobile Menu Button (Hamburger) -->
+        <!-- Mobile Menu Button (Hamburger) - Visible up to 1023px -->
         <button 
           id="mobile-menu-button"
           type="button" 
-          class="md:hidden p-2 rounded-md text-[#1A2B4C] hover:bg-gray-100 focus:outline-none"
+          class="lg:hidden p-2 rounded-md text-[#1A2B4C] hover:bg-gray-100 focus:outline-none"
           aria-label="Menu"
         >
           <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -78,8 +78,8 @@ const t = useTranslations(lang);
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200">
+  <!-- Mobile Menu - Visible up to 1023px -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200">
     <div class="px-4 pt-2 pb-6 space-y-1">
       <a href={lang === 'it' ? '/' : `/${lang}/`} class="block px-3 py-4 text-base font-medium text-[#1A2B4C] hover:bg-gray-50 rounded-md">
         {t('nav.home')}
