@@ -12,7 +12,17 @@ const t = useTranslations(lang);
       <!-- Logo and Site Name -->
       <div class="flex items-center">
         <a href={lang === 'it' ? '/' : `/${lang}/`} class="flex items-center">
-          <img src="/logo.png" alt="Pax et Sapientia Logo" class="h-16 w-16 object-contain" />
+          <picture>
+            <source srcset="/logo.webp" type="image/webp" />
+            <img 
+              src="/logo.png" 
+              alt="Pax et Sapientia Logo" 
+              class="h-16 w-16 object-contain"
+              width="64"
+              height="64"
+              loading="eager"
+            />
+          </picture>
           <span class="ml-3 text-xl font-serif font-bold text-[#1A2B4C] hidden sm:block">
             PAX ET SAPIENTIA
           </span>
