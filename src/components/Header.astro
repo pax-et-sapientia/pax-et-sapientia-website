@@ -10,20 +10,20 @@ const t = useTranslations(lang);
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
     <div class="flex justify-between h-24 items-center w-full">
       <!-- Logo and Site Name -->
-      <div class="flex items-center py-2">
-        <a href={lang === 'it' ? '/' : `/${lang}/`} class="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left">
+      <div class="flex items-center">
+        <a href={lang === 'it' ? '/' : `/${lang}/`} class="flex items-center">
           <picture>
             <source srcset="/logo.webp" type="image/webp" />
             <img 
               src="/logo.png" 
               alt="Pax et Sapientia Logo" 
-              class="h-14 w-14 sm:h-16 sm:w-16 object-contain"
+              class="h-16 w-16 object-contain"
               width="64"
               height="64"
               loading="eager"
             />
           </picture>
-          <span class="mt-1 sm:mt-0 sm:ml-3 text-sm sm:text-xl font-serif font-bold text-[#1A2B4C]">
+          <span class="ml-3 text-xl font-serif font-bold text-[#1A2B4C] hidden sm:block">
             PAX ET SAPIENTIA
           </span>
         </a>
